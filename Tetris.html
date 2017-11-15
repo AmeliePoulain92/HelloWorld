@@ -21,7 +21,7 @@
 
       function arenaSweep() {
         let rowCount = 1;
-        outer: for (let y = arena.length - 1; y < 0; --y) {
+        outer: for (let y = arena.length - 1; y > 0; --y) {
           for (let x = 0; x < arena[y].length; ++x) {
             if (arena[y][x] === 0) {
               continue outer;
@@ -210,7 +210,6 @@
     let lastTime = 0;
     function update(time = 0){
       const deltaTime = time - lastTime;
-      lastTime = time;
 
       dropCounter += deltaTime;
       if (dropCounter > dropInterval){
@@ -263,7 +262,6 @@
 
     playerReset();
     updateScore();
-
     update();
 
 
